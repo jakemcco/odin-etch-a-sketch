@@ -1,0 +1,95 @@
+
+/*Declares global CSS variables.
+:root is identical to the selector html, but w/ higher specificity
+*/
+:root {
+    --primary-light: #F9FAF8;
+    --primary-dark: #273447;
+}
+
+/*Removes all padding and margin from elements that have them applied by default.
+  Makes all pseudo-elements (::before and ::after) inherit their parent's box-sizing as opposed
+  to always using content-box. This determines if properties like padding are applied inwards
+  (maintaining element width) or outwards (adding to the element width).
+  Ref: https://stackoverflow.com/questions/58981682/whats-the-purpose-of-these-css-rules
+*/
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+} */
+
+body {
+    font-family:Roboto, sans-serif;
+    /* display:flex;
+    flex-direction:column;
+    justify-content:space-between; */
+}
+
+.site-header, .site-footer{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: var(--primary-dark);
+    color:var(--primary-light);
+    padding:8px;
+}
+
+.site-content{
+    display:flex;
+    justify-content:flex-start;
+    background-color: rgb(233, 222, 201);
+}
+
+.menu-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:8px;
+}
+.btn-container{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 30px;
+    width: 100px;
+    margin: 20px;
+}
+
+.sketch-container{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px;
+
+}
+
+#grid-container{
+    
+    display: grid;
+    background-color: coral;
+    height: 500px;
+    width: 500px;
+    border-style: solid;
+    border-width: 1px;
+
+}
+
+.grid-item{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px;
+
+}
+
+/* .site-footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+} */
