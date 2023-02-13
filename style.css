@@ -74,8 +74,8 @@ body {
     background-color: coral;
     height: 500px;
     width: 500px;
-    border-style: solid;
-    border-width: 1px;
+    /* border-style: solid;
+    border-width: 1px; */
 
 }
 
@@ -83,9 +83,13 @@ body {
     display:flex;
     align-items: center;
     justify-content: center;
-    border-style: solid;
-    border-width: 1px;
+    /* border-style: solid;
+    border-width: 1px; */
 
+}
+
+#gridSizeValue{
+    margin-bottom: -30px;
 }
 
 /* .site-footer{
