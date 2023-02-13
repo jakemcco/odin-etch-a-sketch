@@ -1,6 +1,6 @@
 
 
-const gridSize = 4;
+const gridSize = 16;
 const gridContainer = document.getElementById('grid-container');
 
 function initializeGrid(size){
@@ -11,8 +11,19 @@ function initializeGrid(size){
         const gridItem = document.createElement('div')
         gridItem.classList.add('grid-item');
         gridItem.textContent = i
+        gridItem.addEventListener('mouseenter', (e) =>{
+            changeColor(e.target,'white');
+        })
+        gridItem.addEventListener('mouseleave', (e) =>{
+            changeColor(e.target,'');
+        })
+
         gridContainer.appendChild(gridItem)
     }
+}
+
+function changeColor(item, color){
+    item.style.backgroundColor = color;
 }
 
 initializeGrid(gridSize);
