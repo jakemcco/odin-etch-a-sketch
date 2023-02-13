@@ -1,27 +1,30 @@
 
-
-const gridSizeSlider = document.getElementById('gridSizeSlider');
-const gridSizeValue = document.getElementById('gridSizeValue');
 const drawColor = 'white';
+const gridSizeSlider = document.getElementById('gridSizeSlider');
+const sliderText = document.getElementById('sliderText');
+
 const gridContainer = document.getElementById('grid-container');
-
-//Button variables
 const clearBtn = document.getElementById('clearBtn');
-clearBtn.onclick = ()=> resetGrid();
-
 let gridSize = gridSizeSlider.value;
-gridSizeValue.textContent = `${gridSize} x ${gridSize}`;
 
-gridSizeSlider.onchange = () =>{
+//Input variable functionality
+
+clearBtn.onclick = ()=> resetGrid();
+sliderText.textContent = `${gridSize} x ${gridSize}`;
+gridSizeSlider.onmousemove = (e) => updateSliderText(e.target.value)
+gridSizeSlider.onchange = (e) => {
     gridSize = gridSizeSlider.value;
-    gridSizeValue.textContent = `${gridSize} x ${gridSize}`;
     resetGrid();
 }
-//Monitor mouse click status for whether user wants to draw or just hover
 
+//Monitor mouse click status for whether user wants to draw or just hover
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown) = true
 document.body.onmouseup = () => (mouseDown) = false
+
+function updateSliderText(value){
+    sliderText.textContent = `${value} x ${value}`;
+}
 
 function initializeGrid(size){
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`
